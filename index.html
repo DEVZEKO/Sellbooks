@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zeko</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;700&family=Delicious+Handrawn&family=Noto+Serif:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" media="screen and (max-width: 800px)" href="./assets/css/index-phone.css">
+</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <style>
+        /* ستايلات التصميم هنا */
+
+        body {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+        h1 {
+            color: #0066cc;
+            margin-bottom: 0;
+        }
+        h1 small {
+            display: block;
+            font-size: 16px;
+            color: #666;
+        }
+        h1 span {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-top: -5px;
+        }
+        #bookImages {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        #bookImages img {
+            max-width: 45%;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        #bookImages img:hover {
+            transform: scale(1.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #0066cc;
+        }
+        p {
+            margin: 5px 0;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        textarea {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004080;
+        }
+        #commentsSection,
+        #userReviews {
+            text-align: left;
+            margin-top: 20px;
+        }
+        #commentsSection p,
+        #userReviews p {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        .userReview {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .userReview img {
+            max-width: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .stars {
+            display: flex;
+            align-items: center;
+            color: #FFD700;
+        }
+        .stars i {
+            margin-right: 3px;
+        }
+        /* تغيير لون النص لكلمة "رقم الهاتف" وسعر الكتاب */
+        #phoneNumber,
+        #bookPrice {
+            color: #FF5733; /* لون النص الجديد */
+        }
+        .course {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9); /* لون خلفية الصندوق */
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* ظل الصندوق */
+            border-radius: 8px;
+        }
+
+        .image-container {
+            display: flex;
+            overflow-x: auto; /* تمكين التمرير الأفقي */
+            scroll-snap-type: x mandatory; /* تسمية نقط التثبيت */
+            -webkit-overflow-scrolling: touch; /* دعم التمرير اللمسي على Safari */
+        }
+
+        .image-container img {
+            max-width: 30%; /* جعل الصور تأخذ حد أقصى من 100% من عرض العنصر */
+            height: auto;
+            border-radius: 8px;
+            margin-right: 10px; /* تباعد بين الصور */
+            scroll-snap-align: start; /* تحديد نقطة التثبيت */
+            transition: transform 0.5s ease; /* تأثير الانتقال */
+        }
+    </style>
+    <title>صفحة الكتاب</title>
+</head>
+<body>
+
+    <h1>كتاب كيف أذاكِر<small>بقلم: أحمد حمزه<span></span></small></h1>
+
+    <div class="course">
+        <div class="image-container">
+        	<img src="./img/Zeko.jpg" alt="صورة الكتاب">
+            <img src="./img/Zeko0.jpg" alt="صورة الكتاب">
+            <img src="./img/Zeko1.jpg" alt="صورة الكتاب">
+            <img src="./img/Zeko2.jpg" alt="صورة الكتاب">
+            <img src="./img/Zeko3.jpg" alt="صورة الكتاب">
+            <img src="./img/Zeko4.jpg" alt="صورة الكتاب">
+        	<img src="./img/Zeko5.jpg" alt="صورة الكتاب">
+        </div>
+</div>
+
+    <h2>:الفهرس والمميزات </h2>
+    <ul>
+        <li>هتكتب الفهرس هنا</li>
+        <li>هتكتب المميزات هنا</li>
+    </ul>
+
+    <h2>:سعر الكتاب والتواصل </h2>
+    <p>السعر  : <span id="bookPrice">100 جنية مصري شامل مصاريف الشحن</span></p>
+    <p>رقم الهاتف : <span id="phoneNumber">01019099693</span></p>
+
+  <div class="inner-container">
+    <div class="container inner-html-editor" data-pb-debug="margin padding">
+      <div class="fr-view" data-pb-section="PBS-xd31rg1671462862846" data-pb-field="htmlText" data-pb-type="html-editor" data-pb-value="<p style=" text-align:="" center;"=""><br><p></p><p style="text-align: center;"><span style="font-size: 18px; color: rgb(0, 0, 0);"><strong>التغلب علي التشتت</strong></span><strong><span style="font-size: 18px;"><br></span></strong></p><p style="text-align: center;"><img src="images/hrfEx0tVj7I6paXG2uvb9D3HK2ntUtbc0JF9v0dD.png" style="width: 176px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/hrfEx0tVj7I6paXG2uvb9D3HK2ntUtbc0JF9v0dD.png"></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="font-size: 18px; color: rgb(0, 0, 0);"><strong>التغلب علي التسويف&nbsp;</strong></span><strong><span style="font-size: 18px;"><br></span></strong><img src="images/JqS1pdqJ76rrZkhcM3EI8XuetlcejSzOhxWE4CUP.png" style="width: 131px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/JqS1pdqJ76rrZkhcM3EI8XuetlcejSzOhxWE4CUP.png"></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="font-size: 18px;"><strong><span style="color: rgb(0, 0, 0);">التغلب علي إدمان السوشيال ميديا&nbsp;</span></strong></span><br><img src="images/fvWaAGADi2Gq2weWrJII1p5upqlZMgW3mURTYYOy.png" style="width: 158px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/fvWaAGADi2Gq2weWrJII1p5upqlZMgW3mURTYYOy.png"></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="font-size: 18px;"><strong><span style="color: rgb(0, 0, 0);">فهم طبيعة الذاكرة</span></strong></span><br><img src="images/rSK2sbxiBaKWDaMY3kt34o19nGBGppL3vDHByyih.png" style="width: 170px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/rSK2sbxiBaKWDaMY3kt34o19nGBGppL3vDHByyih.png">&nbsp;</p><p style="text-align: center;"><span style="font-size: 18px;"><strong><span style="color: rgb(0, 0, 0);">بناء العادات&nbsp;</span></strong></span><img src="images/90ve775OsglcHQ5YMySjlloEvCnQ2EHaylX4Fp6v.png" style="width: 159px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/90ve775OsglcHQ5YMySjlloEvCnQ2EHaylX4Fp6v.png">&nbsp;</p><p style="text-align: center;"><strong><span style="color: rgb(0, 0, 0); font-size: 18px;">إكتساب المهارات</span></strong></p><p style="text-align: center;"><strong><span style="color: rgb(0, 0, 0); font-size: 18px;"><img src="images/xZOg52vy2waEDnTm3Zxu39svErBHddEFU4GbsURq.png" style="width: 189px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/xZOg52vy2waEDnTm3Zxu39svErBHddEFU4GbsURq.png">&nbsp; </span></strong></p><p style="text-align: center;"><span style="font-size: 18px;"><strong><span style="color: rgb(0, 0, 0);">ادارة الوقت&nbsp;</span></strong></span></p><p style="text-align: center;"><img src="images/FdTkrn1xuHmvtiCmlfHuFbXfE1GtoTlgukZY97Rf.png" style="width: 167px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/FdTkrn1xuHmvtiCmlfHuFbXfE1GtoTlgukZY97Rf.png"><br></p><p style="text-align: center;"><br></p><p style="text-align: center;"><strong><span style="font-size: 18px; color: rgb(0, 0, 0);">التخطيط</span></strong><br><img src="images/YPY1EXZ8WFt9G5n4cwEo6yN8kyfh9disYoxMSRWH.png" style="width: 193px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/YPY1EXZ8WFt9G5n4cwEo6yN8kyfh9disYoxMSRWH.png"></p><p style="text-align: center;"><br></p>"&gt;<p style="text-align: center;"><br></p><p style="text-align: center;"><span style="font-size: 18px; color: rgb(0, 0, 0);"><strong>التغلب علي التشتت</strong></span><strong><span style="font-size: 18px;"><br></span></strong></p><p style="text-align: center;"><img src="images/hrfEx0tVj7I6paXG2uvb9D3HK2ntUtbc0JF9v0dD.png" style="width: 176px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/hrfEx0tVj7I6paXG2uvb9D3HK2ntUtbc0JF9v0dD.png"></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="font-size: 18px; color: rgb(0, 0, 0);"><strong>التغلب علي التسويف�&nbsp;</strong></span><strong><span style="font-size: 18px;"><br></span></strong><img src="images/JqS1pdqJ76rrZkhcM3EI8XuetlcejSzOhxWE4CUP.png" style="width: 131px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/JqS1pdqJ76rrZkhcM3EI8XuetlcejSzOhxWE4CUP.png"></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="font-size: 18px;"><strong><span style="color: rgb(0, 0, 0);">التغلب علي إدمان السوشيال ميديا�&nbsp;</span></strong></span><br><img src="images/fvWaAGADi2Gq2weWrJII1p5upqlZMgW3mURTYYOy.png" style="width: 158px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/fvWaAGADi2Gq2weWrJII1p5upqlZMgW3mURTYYOy.png"></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="font-size: 18px;"><strong><span style="color: rgb(0, 0, 0);">فهم طبيعة الذاكرة</span></strong></span><br><img src="images/rSK2sbxiBaKWDaMY3kt34o19nGBGppL3vDHByyih.png" style="width: 170px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/rSK2sbxiBaKWDaMY3kt34o19nGBGppL3vDHByyih.png">�&nbsp;</p><p style="text-align: center;"><span style="font-size: 18px;"><strong><span style="color: rgb(0, 0, 0);">بناء العادات�&nbsp;</span></strong></span><img src="images/90ve775OsglcHQ5YMySjlloEvCnQ2EHaylX4Fp6v.png" style="width: 159px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/90ve775OsglcHQ5YMySjlloEvCnQ2EHaylX4Fp6v.png">�&nbsp;</p><p style="text-align: center;"><strong><span style="color: rgb(0, 0, 0); font-size: 18px;">إكتساب المهارات</span></strong></p><p style="text-align: center;"><strong><span style="color: rgb(0, 0, 0); font-size: 18px;"><img src="images/xZOg52vy2waEDnTm3Zxu39svErBHddEFU4GbsURq.png" style="width: 189px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/xZOg52vy2waEDnTm3Zxu39svErBHddEFU4GbsURq.png">�&nbsp; </span></strong></p><p style="text-align: center;"><span style="font-size: 18px;"><strong><span style="color: rgb(0, 0, 0);">ادارة الوقت�&nbsp;</span></strong></span></p><p style="text-align: center;"><img src="images/FdTkrn1xuHmvtiCmlfHuFbXfE1GtoTlgukZY97Rf.png" style="width: 167px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/FdTkrn1xuHmvtiCmlfHuFbXfE1GtoTlgukZY97Rf.png"><br></p><p style="text-align: center;"><br></p><p style="text-align: center;"><strong><span style="font-size: 18px; color: rgb(0, 0, 0);">التخطيط</span></strong><br><img src="images/YPY1EXZ8WFt9G5n4cwEo6yN8kyfh9disYoxMSRWH.png" style="width: 193px;" class="fr-fic fr-dib" data-name="stores/c2cdaa27c58373e10c494d279f30895a/others/YPY1EXZ8WFt9G5n4cwEo6yN8kyfh9disYoxMSRWH.png"></p><p style="text-align: center;"><br></p></div>
+    </div>
+
+    <h2>:أستفدت </h2>
+    <form id="commentForm">
+        <label for="commentName">اسمك:</label>
+        <input type="text" id="commentName" required><br>
+        <label for="comment">تعليقك:</label>
+        <textarea id="commentInput" rows="4" required></textarea><br>
+        <button type="button" onclick="addComment()">أضف التعليق</button>
+    </form>
+
+    <div id="commentsSection"></div>
+
+    <h2>:اراء المستفدين </h2>
+    <div id="userReviews"></div>
+
+    <script>
+        function submitOpinion() {
+            var opinionForm = document.getElementById("opinionForm");
+            var opinion = "";
+            var opinionInputs = opinionForm.elements["opinion"];
+            
+            for (var i = 0; i < opinionInputs.length; i++) {
+                if (opinionInputs[i].checked) {
+                    opinion = opinionInputs[i].value;
+                    break;
+                }
+            }
+
+            if (opinion !== "") {
+                localStorage.setItem("userOpinion", opinion);
+                alert("تم حفظ رأيك بنجاح!");
+            } else {
+                alert("الرجاء اختيار رأي قبل الإرسال.");
+            }
+        }
+
+        function addComment() {
+            var commentName = document.getElementById("commentName").value;
+            var comment = document.getElementById("commentInput").value;
+            var userOpinion = localStorage.getItem("userOpinion");
+
+            if (userOpinion !== "" && comment.trim() !== "" && commentName.trim() !== "") {
+                var comments = JSON.parse(localStorage.getItem("comments")) || [];
+                comments.push({ name: commentName, comment: comment, opinion: userOpinion });
+                localStorage.setItem("comments", JSON.stringify(comments));
+                displayComments();
+            } else {
+                alert("الرجاء ملء كل الحقول وتقديم رأي قبل الإرسال.");
+            }
+        }
+
+        function displayComments() {
+            var commentsSection = document.getElementById("commentsSection");
+            var comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+            commentsSection.innerHTML = "";
+
+            for (var i = 0; i < comments.length; i++) {
+                var comment = document.createElement("p");
+                comment.innerHTML = "<strong>" + comments[i].name + ":</strong> " + comments[i].comment ;
+                commentsSection.appendChild(comment);
+            }
+        }
+
+        function changeImage(imageSrc) {
+            var bookImage1 = document.getElementById("bookImage1");
+            var bookImage2 = document.getElementById("bookImage2");
+
+            bookImage1.src = imageSrc;
+        }
+
+        function addReview() {
+            var userReviews = document.getElementById("userReviews");
+            var reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+            userReviews.innerHTML = "";
+
+            for (var i = 0; i < reviews.length; i++) {
+                var reviewDiv = document.createElement("div");
+                reviewDiv.className = "userReview";
+                reviewDiv.innerHTML = "<img src='" + reviews[i].avatar + "' alt='User Avatar'>" +
+                    "<p><strong>" + reviews[i].name + ":</strong> " + reviews[i].review + "</p>" +
+                    "<div class='stars'>" + getStars(reviews[i].rating) + "</div>";
+                userReviews.appendChild(reviewDiv);
+            }
+        }
+
+        function getStars(rating) {
+            var stars = "";
+            for (var i = 0; i < 5; i++) {
+                if (i < rating) {
+                    stars += "<i class='fa fa-star'></i>";
+                } else {
+                    stars += "<i class='fa fa-star-o'></i>";
+                }
+            }
+            return stars;
+        }
+     
+
+
+        var reviews = [
+            { name: "ahmed zeko", review: "اللهم بارك الكتاب جميل جداً ", rating: 5, avatar: "img/user1.jpg" },
+            { name: "Dr. Ahmed Safwat ", review: "الكتاب جميل جداً ويقدم  معلومات قيمة شكراً للمبدع", rating: 5, avatar: "img/user3.jpg" },
+            { name: "monzer", review: "الكتاب جميل جداً ويقدم معلومات قيمة شكراً للمبدع", rating: 5, avatar: "img/user2.jpg" },
+// تقدر تضيف هنا تاني اراء
+        ];
+
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+        addReview();
+    </script>
+    <section id="gallery">
+        <div class="title-div">
+            <h1 class="h1-primary gallery-title">:اراء بعض عملائنا في الكتاب </h1>
+            <div id="anime-heading">
+                <div></div>
+            </div>
+        </div>
+        <div id="variety-photos">
+            <div class="photo-container">
+                <img class="photo" src="./assets/img/1.jpg">
+                <div>💞بعض اراء الناس </div>
+            </div>
+            <div class="photo-container">
+                <img src="./assets/img/2.jpg">
+                <div>💞بعض اراء الناس </div>
+            </div>
+            <div class="photo-container">
+                <img src="./assets/img/3.jpg">
+                <div>💞بعض اراء الناس </div>
+            </div>
+            <div class="photo-container">
+                <img src="./assets/img/4.jpg">
+                <div>💞بعض اراء الناس </div>
+            </div>
+            <div class="photo-container">
+                <img src="./assets/img/5.jpg">
+                <div>💞بعض اراء الناس </div>
+            </div>
+            <div class="photo-container">
+                <img src="./assets/img/6.jpg">
+                <div>💞بعض اراء الناس </div>
+            </div>
+    </section>
+</body>
+</div>
+    <div style="font-size: 15px !important;font-weight: 200;color: #6a6a6acc;background-color: #FFFFFF !important;padding: 10px !important;text-align: center !important;display: block !important;">
+    <span>
+      تم البرمجة بواسطة
+      <span style="font-size: 20px;color: black;font-weight: 900;">💙</span>
+        <a href="https://t.me/Software_codes" target="_blank" style="color: #6a6a6acc;">Ahmed Hamza</a>
+    </span>
+  </div> 
+</html>
