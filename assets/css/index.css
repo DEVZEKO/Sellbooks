@@ -1,0 +1,590 @@
+/* Utility Classes */
+
+
+
+
+.h1-primary {
+    font-family: 'Noto Serif', serif;
+    font-weight: 900;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 2.3rem;
+    color: #6f3a3a;
+}
+
+.btn {
+    width: 100px;
+    height: 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.title-div {
+    /* overflow: hidden; */
+}
+
+/* --------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    /* background-color: silver; */
+}
+
+/* -----------------------------Navigation bar---------------------- */
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Noto Serif', serif;
+    z-index:5;
+}
+
+#navbar::before {
+    content: "";
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+}
+
+#logo {
+    height: 50px;
+}
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+#navbar ul li {
+    margin-left: 15px;
+}
+#navbar ul button {
+    background-color: transparent;
+    border: 2px solid red;
+    margin: 0px 15px;
+    transition: border .5s;
+}
+#navbar ul button a{
+    position: relative;
+    display: block;
+    padding: 4px;
+    color: #fff;
+    transition: color .5s;
+}
+#navbar ul button a:hover{
+    color: lime;
+}
+#navbar ul button:hover{
+    border: 2px solid green;
+}
+#navbar ul li a {
+    display: block;
+    position: relative;
+    padding: 3px 6px;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 8px;
+}
+
+#active::after{
+    transform: scaleX(1) !important;
+}
+
+#navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -4px;
+    background-color: red;
+    border-radius: 5px;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    /* transition: .5s; */
+    transition: transform .5s;
+    transform-origin: right;
+}
+
+#navbar ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.fa-bars {
+    color: white;
+    font-size: 30px;
+    margin: 0px 20px;
+    display: none;
+}
+
+/* ----------------dropdown-navigaytion---------------- */
+
+.dropdown{
+    position: absolute;
+    right: 15px;
+}
+.dropdown-content {
+    font-family: 'Noto Serif', serif;
+    font-weight: 900;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 5px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border-radius: 10px;
+}
+.fa-bars:hover {
+    color: red;
+    cursor: pointer;
+}
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+.dropdown button {
+    background-color: transparent;
+    border: 2px solid red;
+    margin: 5px 0px;
+    transition: border .5s;
+}
+
+.dropdown-content a {
+    position: relative;
+    color: black;
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.dropdown-content button a {
+    top: -6px;
+    display: block;
+    padding: 4px;
+    color: #000000;
+    transition: color .5s;
+}
+
+.dropdown button a:hover {
+    color: lime;
+}
+
+.dropdown button:hover {
+    border: 2px solid green;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -4px;
+    background-color: red;
+    border-radius: 5px;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    /* transition: .5s; */
+    transition: transform .5s;
+    transform-origin: right;
+}
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+
+/* -------------Main banner------------------ */
+
+#quote-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 680px;
+}
+
+#quote-banner::before {
+    content: "";
+    width: 100%;
+    height: 680px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("../img/home-banner.jpg");
+    /* background-blend-mode: multiply; */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+#quote-banner-text {
+    font-family: 'Alkatra', cursive;
+    max-width: 1000px;
+    font-size: 2.1rem;
+    color: #fff;
+    text-align: center;
+    opacity: 0.7;
+}
+/* --------------moments------------- */
+#moments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.moments-title {
+    margin-top: 40px;
+}
+
+#anime-heading {
+    height: 5px;
+    background-color: red;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+#anime-heading div {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    position: relative;
+    left: 0;
+    border-radius: 50%;
+    animation-name: heading-anime;
+    /* transition: .5s; */
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+@keyframes heading-anime {
+    from {
+        left: 0%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+#img-banner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.banner-img {
+    width: 375px;
+    height: 475px;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#img1 {
+    background-image: url('../img/img-wedding1.jpg');
+}
+
+#img2 {
+    background-image: url('../img/img-portrait1.jpg');
+}
+
+#img3 {
+    background-image: url('../img/img-tamil-shutter.jpg');
+}
+
+.banner-img a {
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    opacity: .6;
+    font-weight: 600;
+    position: relative;
+    top: 390px;
+    transition: background-color .5s;
+}
+
+.banner-img a:hover {
+    background-color: gray;
+    opacity: 1;
+}
+
+
+/* --------------- Gallery ----------- */
+
+#gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 25px 0;
+}
+
+.gallery-title {
+    /* margin: 15px 0px; */
+}
+
+#variety-photos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.photo-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 280px;
+    margin: 5px;
+}
+
+.photo-container img {
+    width: 318px;
+    height: 230px;
+    padding: 15px;
+    transition:padding .3s;
+    border-radius: 20px;
+}
+
+.photo-container img:hover {
+    padding: 5px;
+}
+
+.photo-container div {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: 'Noto Serif', serif;
+}
+#view-more{
+    font-weight: 100;
+    font-size: 1.3rem;
+}
+.fa-arrow-right{
+    font-size: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+}
+.fa-arrow-right:hover{
+    border: 2px solid rgb(58, 1, 112);
+    color: black;
+}
+
+/* -----------------about me---------- */
+
+#about-me-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-me-heading h1 {}
+
+#about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 20px;
+}
+
+#about-me img {
+    max-width: 300px;
+    height: auto;
+    /* padding: 30px; */
+    /* border-radius: 10px; */
+}
+
+#about-me div {
+    max-width: 777px;
+    margin-left: 40px;
+    font-size: 1.3rem;
+    padding: 20px;
+    /* font-family: 'Delicious Handrawn', cursive; */
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#about-me div h3 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+
+
+/* ------Quote-------- */
+.quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffbbbb;
+    margin: 70px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.quote div {
+    display: inline-block;
+    font-family: 'Alkatra', cursive;
+    text-align: center;
+    font-size: 2rem;
+    color: #301367;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+    word-spacing: 3px;
+    position: relative;
+    animation-name: left-to-right;
+    animation-duration: 15s;
+    animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+@keyframes left-to-right {
+    from {
+        transform: translateX(112%);
+    }
+
+    to {
+        transform: translateX(-112%);
+    }
+}
+
+
+/* -----------------book a photoshoot------------- */
+
+#booking-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#book-photoshoot {
+    height: 500px;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#book-photoshoot::before {
+    content: '';
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 500px;
+    background: url("../img/img-book2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: .9;
+}
+
+#book-text {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    max-width: 66rem;
+    padding: 10px;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 15px;
+}
+
+#book-photoshoot button {
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    border: 1px solid blue;
+    transition: .5s;
+}
+
+#book-photoshoot button a {
+    display: block;
+    padding: 3px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    transition: .5s;
+}
+
+#book-photoshoot button:hover {
+    background-color: green;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+#book-photoshoot button a:hover {
+    color: #fff;
+}
+
+
+#follow-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+}
+#follow-us h1 {
+    font-style: italic;
+    padding-top: 20px;
+}
+
+#social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.fa-telegram,
+.fa-facebook-official,
+.fa-instagram,
+.fa-twitter,
+.fa-github {
+    font-size: 40px;
+    color: #39354a;
+    padding: 10px;
+    margin: 10px;
+    background-color: #cacaca;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.follow-us-icon:hover {
+    color: white;
+    background-color: black;
+}
